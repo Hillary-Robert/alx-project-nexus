@@ -1,12 +1,11 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import { useState } from "react";
+import Filters from "@/components/filter";
+import SortBar from "../components/SortBar";
 
 
-
-export default function Home() {
+export default function HomePage() {
+ 
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  );
+    <div>Home</div>
+  )
 }

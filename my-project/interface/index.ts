@@ -10,17 +10,16 @@ export interface Product {
   category: string;
   thumbnail: string;
   images: string[];
-};
+}
 
-export interface ProductResponse{
+export interface ProductResponse {
   products: Product[];
   total: number;
   skip: number;
   limit: number;
-};
+}
 
-
-export interface Props {
+export interface FiltersProps {
   q: string;
   setQ: (v: string) => void;
   category: string;
@@ -30,5 +29,5 @@ export interface Props {
   infinite: boolean;
   setInfinite: (v: boolean) => void;
   loading: boolean;
-  onApply: () => void; 
-};
+  onApply: () => void;
+}

@@ -1,4 +1,4 @@
-type Props = {
+export type SortBarProps = {
   sortBy: "price" | "rating" | "";
   sortOrder: "asc" | "desc" | "";
   setSortBy: (v: "price" | "rating" | "") => void;
@@ -8,7 +8,7 @@ type Props = {
 
 export default function SortBar({
   sortBy, sortOrder, setSortBy, setSortOrder, onApply
-}: Props) {
+}: SortBarProps) {
   return (
     <div className="mb-4 flex items-center gap-3">
       <span className="text-sm font-medium">Sort:</span>

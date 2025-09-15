@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Props } from "@/interface";
+import { FiltersProps } from "@/interface";
 
 const CATEGORIES = ["all","smartphones","laptops","fragrances","skincare","groceries","home-decoration"];
 
 export default function Filters({
   q, setQ, category, setCategory, limit, setLimit, infinite, setInfinite, loading, onApply
-}: Props) {
+}: FiltersProps) {
   const [localQ, setLocalQ] = useState(q);
 
   useEffect(() => {
@@ -14,7 +14,10 @@ export default function Filters({
       onApply();
     }, 400);
     return () => clearTimeout(t);
-  }, [localQ]); 
+    
+  }, [localQ]);
+
+  useEffect(() => setLocalQ(q), [q]);
 
   return (
     <section className="grid md:grid-cols-4 gap-3 mb-4">
@@ -34,10 +37,7 @@ export default function Filters({
         <select
           className="rounded-lg border px-3 py-2"
           value={category}
-          onChange={(e) => {
-            setCategory(e.target.value);
-            onApply();
-          }}
+          onChange={(e) => { setCategory(e.target.value); onApply(); }}
           aria-label="Filter by category"
         >
           {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -49,10 +49,7 @@ export default function Filters({
         <select
           className="rounded-lg border px-3 py-2"
           value={limit}
-          onChange={(e) => {
-            setLimit(Number(e.target.value));
-            onApply();
-          }}
+          onChange={(e) => { setLimit(Number(e.target.value)); onApply(); }}
           aria-label="Items per page"
         >
           {[6,12,24].map((n) => <option key={n} value={n}>{n}</option>)}
@@ -64,10 +61,7 @@ export default function Filters({
           type="checkbox"
           className="h-4 w-4"
           checked={infinite}
-          onChange={(e) => {
-            setInfinite(e.target.checked);
-            onApply();
-          }}
+          onChange={(e) => { setInfinite(e.target.checked); onApply(); }}
           aria-label="Toggle infinite scrolling"
         />
         <span className="text-sm">Infinite scrolling</span>
