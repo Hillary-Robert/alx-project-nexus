@@ -1,4 +1,4 @@
-export type Product = {
+export interface Product {
   id: number;
   title: string;
   description: string;
@@ -12,9 +12,23 @@ export type Product = {
   images: string[];
 };
 
-export type ProductResponse = {
+export interface ProductResponse{
   products: Product[];
   total: number;
   skip: number;
   limit: number;
+};
+
+
+export interface Props {
+  q: string;
+  setQ: (v: string) => void;
+  category: string;
+  setCategory: (v: string) => void;
+  limit: number;
+  setLimit: (n: number) => void;
+  infinite: boolean;
+  setInfinite: (v: boolean) => void;
+  loading: boolean;
+  onApply: () => void; 
 };
