@@ -31,3 +31,15 @@ export interface FiltersProps {
   loading: boolean;
   onApply: () => void;
 }
+
+
+export interface Slide {
+  image: string;
+  title: string;
+  text: string;
+  ctas: {
+    label: string;
+    href: string;
+    primary?: boolean;
+  }[];
+}
