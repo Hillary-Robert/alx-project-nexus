@@ -43,3 +43,14 @@ export interface Slide {
     primary?: boolean;
   }[];
 }
+
+
+export interface gridProps {
+  searchQuery: string;
+  selectedCategory: string;
+  sortField: "" | "price" | "rating";
+  sortDirection: "" | "asc" | "desc";
+  itemsPerPage: number;
+  useInfiniteScroll: boolean;
+  refreshSignal: number; 
+};

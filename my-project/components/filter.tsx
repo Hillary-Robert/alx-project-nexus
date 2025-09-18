@@ -9,11 +9,11 @@ export default function Filters({
   const [localQ, setLocalQ] = useState(q);
 
   useEffect(() => {
-    const t = setTimeout(() => {
+    const time = setTimeout(() => {
       setQ(localQ);
       onApply();
     }, 400);
-    return () => clearTimeout(t);
+    return () => clearTimeout(time);
     
   }, [localQ]);
 
@@ -52,7 +52,7 @@ export default function Filters({
           onChange={(e) => { setLimit(Number(e.target.value)); onApply(); }}
           aria-label="Items per page"
         >
-          {[6,12,24].map((n) => <option key={n} value={n}>{n}</option>)}
+          {[6,12,24].map((number) => <option key={number} value={number}>{number}</option>)}
         </select>
       </label>
 
@@ -62,7 +62,7 @@ export default function Filters({
           className="h-4 w-4"
           checked={infinite}
           onChange={(e) => { setInfinite(e.target.checked); onApply(); }}
-          aria-label="Toggle infinite scrolling"
+          
         />
         <span className="text-sm">Infinite scrolling</span>
         {loading && <span className="text-xs ml-auto">Loading…</span>}
