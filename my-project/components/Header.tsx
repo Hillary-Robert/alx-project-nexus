@@ -38,6 +38,8 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-2">
           <Link href="/" className={linkCls("/")}>Home</Link>
+
+         
           
 
           <Link
