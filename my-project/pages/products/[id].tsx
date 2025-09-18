@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Product } from "@/interface";
+import { useAppDispatch } from "@/store";
+import { addItemToCart } from "@/store/cartSlice";
 
 export default function ProductDetailPage() {
   const router = useRouter();
@@ -9,6 +11,7 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError]   = useState<string | null>(null);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (!id) return;
@@ -34,8 +37,9 @@ export default function ProductDetailPage() {
   if (!product) return <p className="p-4">Not found.</p>;
 
   return (
-    <main className="grid lg:grid-cols-2 gap-8 px-6 py-10">
+    <main className="grid lg:grid-cols-2 gap-8 max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-7xl mx-auto px-4 py-4 sm:py-6">
       <div>
+        
         <img
           src={product.thumbnail}
           alt={product.title}
@@ -77,6 +81,22 @@ export default function ProductDetailPage() {
           <Link href="/" className="px-4 py-2 rounded-lg border">Back to catalog</Link>
         </div>
       </div>
+
+       <div className="mt-8 flex items-center gap-3">
+    <button
+      className="px-5 py-3 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700"
+      onClick={() => product && dispatch(addItemToCart({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        thumbnail: product.thumbnail,
+        qty: 1,
+      }))}
+    >
+      Add to cart
+    </button>
+    <Link href="/" className="px-4 py-2 rounded-lg border">Back to catalog</Link>
+  </div>
     </main>
   );
 }

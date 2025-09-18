@@ -21,7 +21,7 @@ export default function HomePage() {
 
       <Hero />
 
-      <section id="catalog"  className="max-w-7xl mx-auto py-6">
+      <section id="catalog"  className="max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-7xl mx-auto px-4 py-4 sm:py-6">
         <Filters
           q={q} setQ={setQ}
           category={category} setCategory={setCategory}

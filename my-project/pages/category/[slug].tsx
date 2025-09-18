@@ -34,7 +34,7 @@ export default function CategoryPage() {
   if (error)   return <p className="p-4 text-red-600">{error}</p>;
 
   return (
-    <main>
+    <main className="max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-7xl mx-auto px-4 py-4 sm:py-6">
       <h1 className="text-2xl font-bold mb-4">Category: {slug}</h1>
       {items.length === 0 ? (
         <p>No items in this category.</p>

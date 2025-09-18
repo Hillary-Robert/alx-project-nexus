@@ -202,7 +202,7 @@ export default function ProductGrid({
         </div>
       )}
 
-     
+      {/* Infinite scroll vs Pagination */}
       {useInfiniteScroll ? (
         <>
           <div id="scroll-sentinel" aria-hidden="true" />
