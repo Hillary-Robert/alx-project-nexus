@@ -1,40 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🛍️ Productify  
 
-## Getting Started
+> **Productify** – A modern e-commerce web app built with **Next.js** and **TypeScript** that allows users to browse, filter, and purchase products seamlessly. Powered by the [DummyJSON API](https://dummyjson.com/products).  
 
-First, run the development server:
+---
+
+## 📖 Table of Contents  
+
+- [Overview](#-overview)  
+- [Features](#-features)  
+- [Tech Stack](#-tech-stack)  
+- [Project Structure](#-project-structure)  
+- [Getting Started](#-getting-started)  
+- [Usage](#-usage)  
+- [Demo Screenshots](#-demo-screenshots)  
+- [Future Improvements](#-future-improvements)  
+- [Contributing](#-contributing)  
+- [Author](#-author)  
+- [License](#-license)  
+
+---
+
+## 📌 Overview  
+
+**Productify** is designed as a lightweight yet powerful **e-commerce platform prototype**.  
+It fetches real products from the **DummyJSON API** and provides an interactive shopping experience with filtering, sorting, cart persistence, and a checkout flow.  
+
+This project is perfect for learning:  
+
+- How to integrate APIs in Next.js  
+- How to manage state with Redux Toolkit  
+- How to build a reusable and scalable component structure  
+- How to persist data (cart) using LocalStorage  
+
+---
+
+## 🚀 Features  
+
+- **Dynamic Product Catalog** – Fetches products from DummyJSON API in real-time  
+- **Filtering & Sorting** – Filter by categories and sort by name or price  
+- **Infinite Scroll (Optional)** – Load more products as you scroll  
+- **Cart Management** – Add, remove, and update quantities of items  
+- **Redux statemanagement** – Keeps cart data even after reload  
+- **Checkout Page** – Summarize selected products before purchase  
+- **Type Safety** – Full TypeScript integration  
+- **Scalable Architecture** – Modular and reusable components  
+
+---
+
+## 🛠 Tech Stack  
+
+- **Framework**: [Next.js](https://nextjs.org/)  
+- **Language**: [TypeScript](https://www.typescriptlang.org/)  
+- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)  
+- **API**: [DummyJSON Products API](https://dummyjson.com/products)  
+- **Styling**: CSS / TailwindCSS (optional depending on setup)  
+- **Persistence**: Redux  
+
+---
+
+## 📂 Project Structure  
+
+```bash
+productify/
+├── components/        # Reusable UI components (Filters, SortBar, ProductCard, etc.)
+├── pages/             # Next.js pages (Home, Products, Checkout, etc.)
+│   ├── index.tsx      # Homepage
+│   ├── products/      # Products page with filtering & sorting
+│   └── checkout.tsx   # Checkout page
+├── store/             # Redux slices for cart and state management
+│   └── cartSlice.ts   # Handles cart actions (add, remove, hydrate, save)
+├── interface.ts       # TypeScript interfaces & types
+├── public/            # Static assets
+├── styles/            # Global styles
+├── package.json       # Dependencies & scripts
+└── README.md          # Documentation
+```
+
+---
+
+## ⚙️ Getting Started  
+
+### 1️⃣ Clone the repository  
+
+```bash
+git clone https://github.com/Hillary-Robert/alx-project-nexus.git
+cd productify
+```  
+
+### 2️⃣ Install dependencies  
+
+```bash
+npm install
+```  
+
+### 3️⃣ Run development server  
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+```  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will be live at 👉 [http://localhost:3000](http://localhost:3000)  
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🖥 Usage  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Browse Products  
+- The homepage lists products from the DummyJSON API.  
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Filter & Sort  
+- Use the **Filters** panel to search or filter by category.  
+- Use the **SortBar** to sort products by name or price.  
 
-## Learn More
+### Cart Management  
+- Add products to the cart from product cards.  
+- Update item quantities or remove items.  
+- Cart state is **saved in localStorage**.  
 
-To learn more about Next.js, take a look at the following resources:
+### Checkout  
+- Navigate to `/checkout` to view your cart summary.  
+- *(Future: Integrate payment processing).*  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🔮 Future Improvements  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🔑 Authentication (login/register system)  
+- 🛍️ Order history & profile dashboard  
+- 💳 Payment gateway integration (Stripe, PayPal)  
+- 🌐 Multi-language & multi-currency support  
+- 📱 Improved responsive design with animations  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
+
+
+
+## 👨‍💻 Author  
+
+**Hillary Robert**  
+- GitHub: [Hillary-Robert](https://github.com/Hillary-Robert)  
+- LinkedIn: [hillaryrobert30 ](https://www.linkedin.com/in/hillaryrobert30/) 
+
+---
