@@ -56,6 +56,7 @@ export default function ProductGrid({
       setErrorMessage(null);
 
       const skipCount = (pageNumber - 1) * itemsPerPage;
+      
       const url = buildApiUrl({
         searchQuery,
         selectedCategory,

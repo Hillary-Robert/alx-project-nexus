@@ -1,10 +1,4 @@
-export type SortBarProps = {
-  sortBy: "price" | "rating" | "";
-  sortOrder: "asc" | "desc" | "";
-  setSortBy: (v: "price" | "rating" | "") => void;
-  setSortOrder: (v: "asc" | "desc" | "") => void;
-  onApply: () => void;
-};
+import { SortBarProps } from "@/interface";
 
 export default function SortBar({
   sortBy, sortOrder, setSortBy, setSortOrder, onApply

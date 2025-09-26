@@ -33,6 +33,15 @@ export interface FiltersProps {
 }
 
 
+export interface SortBarProps {
+  sortBy: "price" | "rating" | "";
+  sortOrder: "asc" | "desc" | "";
+  setSortBy: (v: "price" | "rating" | "") => void;
+  setSortOrder: (v: "asc" | "desc" | "") => void;
+  onApply: () => void;
+};
+
+
 export interface Slide {
   image: string;
   title: string;
@@ -63,3 +72,21 @@ export interface CartItem {
   thumbnail: string;
   qty: number;
 };
+
+
+export interface CheckoutFormData  {
+  fullName: string;
+  email: string;
+  phone?: string;
+  addressLine1: string;
+  addressLine2?: string;
+  city: string;
+  stateRegion: string;
+  postalCode: string;
+  country: string;
+  cardName: string;
+  cardNumber: string;
+  cardExpiry: string;
+  cardCvc: string;
+};
+

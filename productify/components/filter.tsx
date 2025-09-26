@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FiltersProps } from "@/interface";
+import { CATEGORIES } from "@/constants";
 
-const CATEGORIES = ["all","smartphones","laptops","fragrances","skincare","groceries","home-decoration"];
 
 export default function Filters({
   q, setQ, category, setCategory, limit, setLimit, infinite, setInfinite, loading, onApply
@@ -12,7 +12,7 @@ export default function Filters({
     const time = setTimeout(() => {
       setQ(localQ);
       onApply();
-    }, 400);
+    }, 1000);
     return () => clearTimeout(time);
     
   }, [localQ]);

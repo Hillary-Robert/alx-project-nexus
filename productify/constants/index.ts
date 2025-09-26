@@ -1,4 +1,4 @@
-import { Slide } from "@/interface";
+import { CheckoutFormData, Slide } from "@/interface";
 
 export const slides: Slide[] = [
   {
@@ -46,3 +46,26 @@ export const slides: Slide[] = [
 
   
 ];
+
+
+export const CATEGORIES = ["all","smartphones","laptops","fragrances","skincare","groceries","home-decoration"];
+
+
+
+
+
+export const initialForm: CheckoutFormData = {
+  fullName: "",
+  email: "",
+  phone: "",
+  addressLine1: "",
+  addressLine2: "",
+  city: "",
+  stateRegion: "",
+  postalCode: "",
+  country: "",
+  cardName: "",
+  cardNumber: "",
+  cardExpiry: "",
+  cardCvc: "",
+};

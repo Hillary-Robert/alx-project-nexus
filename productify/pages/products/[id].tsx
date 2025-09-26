@@ -15,8 +15,11 @@ export default function ProductDetailPage() {
 
   useEffect(() => {
     if (!id) return;
+
     let cancelled = false;
+
     (async () => {
+
       try {
         setLoading(true);
         const res = await fetch(`https://dummyjson.com/products/${id}`);
@@ -95,6 +98,7 @@ export default function ProductDetailPage() {
     >
       Add to cart
     </button>
+    
     <Link href="/" className="px-4 py-2 rounded-lg border">Back to catalog</Link>
   </div>
     </main>
