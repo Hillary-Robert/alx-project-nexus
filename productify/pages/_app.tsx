@@ -26,6 +26,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="preload" as="image" href="/hero2.jpg" />
         <link rel="preload" as="image" href="/hero3.jpg" />
         <link rel="preload" as="image" href="/hero4.jpg" />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <HydrateCartOnce />
